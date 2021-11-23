@@ -5,12 +5,12 @@
 class Connect < Formula
   desc "Software to create fast and easy drum rolls."
   homepage "https://dioad.com/"
-  version "0.8-gon-test43"
+  version "0.8-gon-test44"
   depends_on :macos
 
   on_macos do
-    url "http://releases.lab.dioad.com/data/connect/v0.8-gon-test43/connect_darwin_all.tar.gz", :using => CurlDownloadStrategy
-    sha256 "a38f9460ae9a7eb1b4ac5368a8257361be121b12be25eaccce1130f7b97cede6"
+    url "http://releases.lab.dioad.net/data/connect/v0.8-gon-test44/dioad-connect-darwin-universal.zip", :using => CurlDownloadStrategy
+    sha256 "7b0bcdaf9ca3776d8e9067abea5905b1b274f856fa183c0f8bdfcb00419a362e"
 
     def install
       bin.install "connect"
