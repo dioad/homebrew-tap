@@ -10,7 +10,7 @@ class Connect < Formula
 
   on_macos do
     url "http://releases.lab.dioad.net/data/connect/0.15/connect_darwin_all.tar.gz", :using => CurlDownloadStrategy
-    sha256 "6c18e297a48e01b8a6676342f057aee88788d2388c03a38f5ad6f9d2f732a2c5"
+    sha256 "8620689baf8889251fc10cd30fcf943fb6286f523e5e94ab96553ccae33dd532"
 
     def install
       bin.install "connect"
