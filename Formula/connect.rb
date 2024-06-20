@@ -5,14 +5,24 @@
 class Connect < Formula
   desc "Dioad Connect is an SNI based TCP reverse tunnel that provides end-to-end encrypted traffic whereever you need it."
   homepage "https://dioad.com/"
-  version "0.58.6"
+  version "0.59.13"
   depends_on :macos
 
-  url "http://releases.lab.dioad.net/data/connect/0.58.6/connect_darwin_all.tar.gz", using: CurlDownloadStrategy
-  sha256 "f1f25583c11d6fdfdd627249ed8de244fd49c5814c5b889e8f8e6c5e95367759"
+  on_intel do
+    url "http://releases.lab.dioad.net/data/connect/0.59.13/connect_darwin_amd64.zip", using: CurlDownloadStrategy
+    sha256 "5a8be8b99a43d87839cac7c3656d7d4190d42994ae1ca0bd4b5fa063cc96bc98"
 
-  def install
-    bin.install "connect"
+    def install
+      bin.install "connect"
+    end
+  end
+  on_arm do
+    url "http://releases.lab.dioad.net/data/connect/0.59.13/connect_darwin_arm64.zip", using: CurlDownloadStrategy
+    sha256 "751b4ab18297a3f206c4f850bb9db58897bf3a39d01b590790b72197f427c853"
+
+    def install
+      bin.install "connect"
+    end
   end
 
   test do
