@@ -10,7 +10,7 @@ class Connect < Formula
 
   on_intel do
     url "https://releases.lab.dioad.net/data/connect/0.63.1/connect_darwin_amd64.zip", using: CurlDownloadStrategy
-    sha256 "c1b10a64dcf8c08516b2de3b539516564cc14bb2a39e37296450ab4fd58eb823"
+    sha256 "8d282d1037394a03c5dd038833d0944d940a73c829150a9e86be6f5e2c355747"
 
     def install
       bin.install "connect"
@@ -18,7 +18,7 @@ class Connect < Formula
   end
   on_arm do
     url "https://releases.lab.dioad.net/data/connect/0.63.1/connect_darwin_arm64.zip", using: CurlDownloadStrategy
-    sha256 "576cc6fc3441b1b1b21d765f0479cd9c698d6b30e13fa14166ad96e4376b7143"
+    sha256 "a2abe368bfd420a4ecc6343b6a933c3ec97afa816a24e570dcdda512764e56c0"
 
     def install
       bin.install "connect"
