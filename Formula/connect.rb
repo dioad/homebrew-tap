@@ -10,7 +10,7 @@ class Connect < Formula
 
   if Hardware::CPU.intel?
     url "https://releases.lab.dioad.net/data/connect/0.70.2/connect_darwin_amd64.zip", using: CurlDownloadStrategy
-    sha256 "d066e3baba0e3a0ff898e9bbeeb3453c53990e4eba9702b5b05129359040b075"
+    sha256 "9b83e649503c460dc8d64e707b0241eb5d09045a4a7caea1508c45531632a24e"
 
     def install
       bin.install "connect"
@@ -18,7 +18,7 @@ class Connect < Formula
   end
   if Hardware::CPU.arm?
     url "https://releases.lab.dioad.net/data/connect/0.70.2/connect_darwin_arm64.zip", using: CurlDownloadStrategy
-    sha256 "7b4ac7f7266a53e659f91101a4f6aa7118b4fd5085bbcfea31a826b4f0b2fbab"
+    sha256 "f89c142a18a871ebb80a3783c1a1f91ba4db964dbca5badfe6bb68e32612993a"
 
     def install
       bin.install "connect"
