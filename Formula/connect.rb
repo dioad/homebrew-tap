@@ -5,25 +5,35 @@
 class Connect < Formula
   desc "Dioad Connect is an SNI based TCP reverse tunnel that provides end-to-end encrypted traffic whereever you need it."
   homepage "https://dioad.com/"
-  version "0.78.1"
+  version "0.79.0"
   license "MIT"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://releases.lab.dioad.net/data/connect/0.78.1/connect_darwin_amd64.zip", using: CurlDownloadStrategy
-    sha256 "77f97be88ce64c4dd4b6591ae26f3310955fae58fbf37cf9dd06089e28d7b331"
+    url "https://releases.lab.dioad.net/data/connect/0.79.0/connect_darwin_amd64.zip", using: CurlDownloadStrategy
+    sha256 "e164bb998b8417fe3f5ec57f6956a3431857b4ee8cb38c1b3daac68fe70111a6"
 
     define_method(:install) do
       bin.install "connect"
     end
   end
   if Hardware::CPU.arm?
-    url "https://releases.lab.dioad.net/data/connect/0.78.1/connect_darwin_arm64.zip", using: CurlDownloadStrategy
-    sha256 "cc17ee4b71a06139f6f84426a012b027b3a4649a356a65c7a255ce2258825891"
+    url "https://releases.lab.dioad.net/data/connect/0.79.0/connect_darwin_arm64.zip", using: CurlDownloadStrategy
+    sha256 "765a220132e717b31c73e2358453d0d0d3452916395e7d24e12e890e2157bd43"
 
     define_method(:install) do
       bin.install "connect"
     end
+  end
+
+  service do
+    run [opt_bin/"connect", "agent", "--config", etc/"dioad/connect/agent.yaml"]
+    run_type :immediate
+    keep_alive successful_exit: false
+    working_dir var/"dioad-connect"
+    log_path var/"log/dioad-connect/agent.log"
+    error_log_path var/"log/dioad-connect/agent.log"
+    environment_variables HOME: var/"dioad-connect"
   end
 
   test do
