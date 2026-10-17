@@ -5,21 +5,21 @@
 class Eventbroker < Formula
   desc "HTTP event broker with CloudEvents, SSE, and webhook support"
   homepage "https://dioad.com/"
-  version "0.8.0"
+  version "0.8.1"
   license "MIT"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://releases.lab.dioad.net/data/eventbroker/0.8.0/eventbroker_darwin_amd64.zip", using: CurlDownloadStrategy
-    sha256 "8175783c7d53ec71f331359158193d61e26ba6148e77a9403976ff1a7ae60bc1"
+    url "https://releases.lab.dioad.net/data/eventbroker/0.8.1/eventbroker_darwin_amd64.zip", using: CurlDownloadStrategy
+    sha256 "93695c4c2a99ff08ba59806875bc3bd6322b06fe8b0388524c98956858ca5241"
 
     define_method(:install) do
       bin.install "eventbroker"
     end
   end
   if Hardware::CPU.arm?
-    url "https://releases.lab.dioad.net/data/eventbroker/0.8.0/eventbroker_darwin_arm64.zip", using: CurlDownloadStrategy
-    sha256 "2bc1f731f17862af925f540a65dcc88d217252091240113b35bdb6f13b593993"
+    url "https://releases.lab.dioad.net/data/eventbroker/0.8.1/eventbroker_darwin_arm64.zip", using: CurlDownloadStrategy
+    sha256 "bdd2efdd8641c1aa9d3d7cd7e174929e6846270e4f3cf45697ac0c80fcd02c37"
 
     define_method(:install) do
       bin.install "eventbroker"
